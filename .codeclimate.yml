@@ -1,0 +1,44 @@
+version: "2"
+checks:
+  checks:
+  argument-count:
+    enabled: false
+  complex-logic:
+    enabled: false
+    config:
+      threshold: 4
+  file-lines:
+    enabled: false
+    config:
+      threshold: 250
+  method-complexity:
+    enabled: false
+    config:
+      threshold: 5
+  method-count:
+    enabled: false
+    config:
+      threshold: 20
+  method-lines:
+    enabled: false
+    config:
+      threshold: 25
+  nested-control-flow:
+    enabled: false
+    config:
+      threshold: 4
+  return-statements:
+    enabled: false
+  similar-code:
+    config:
+      threshold: 60
+  identical-code:
+    config:
+      threshold: 60
+plugins:
+  duplication:
+    enabled: true
+  fixme:
+    enabled: true
+  git-legal:
+    enabled: true

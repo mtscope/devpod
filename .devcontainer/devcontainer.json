@@ -1,0 +1,82 @@
+{
+  "name": "Dotnet Development Environment",
+  "workspaceFolder": "",
+
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/git-lfs:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "2"
+    },
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest"
+    },
+    "ghcr.io/azure/azure-dev/azd:0": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "none",
+      "dotnetRuntimeVersions": "9.0",
+      "aspNetCoreRuntimeVersions": "9.0"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-node-azure-pack",
+        "GitHub.copilot",
+        "GitHub.vscode-github-actions",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "editorconfig.editorconfig",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "forwardPorts": [
+    5000,
+    5001
+  ],
+  "postCreateCommand": "ehco 'Created!'",
+  "hostRequirements": {
+    "cpus": 8,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "remoteEnv": {
+    "PODMAN_USERNS": "keep-id",
+    "DOTNET_MULTILEVEL_LOOKUP": "0",
+    "TARGET": "net9.0"
+  },
+  "containerUser": "vscode",
+  "portsAttributes": {
+    "5000": {
+      "label": "http:DotnetWeb.WebApi",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "5001": {
+      "label": "https:DotnetWeb.WebApi",
+      "onAutoForward": "notify",
+      "protocol": "https"
+    }
+  },
+    "mounts": [
+      {
+        "type": "volume",
+        "source": "x509stores",
+        "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
+      }
+    ],
+    "onCreateCommand": "bash .devcontainer/setup-dotnet-dev-cert.sh"
+}

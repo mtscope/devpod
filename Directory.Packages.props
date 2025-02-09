@@ -1,0 +1,152 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageVersionOverrideEnabled>false</CentralPackageVersionOverrideEnabled>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Condition = "'$(TargetFramework)' == 'net9.0'">
+    <PackageVersion Include="Asp.Core" Version="1.41.0" />
+    <PackageVersion Include="Asp.Versioning.Abstractions" Version="8.1.0" />
+    <PackageVersion Include="Asp.Versioning.Http" Version="8.1.0" />
+    <PackageVersion Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageVersion Include="Asp.Versioning.Mvc" Version="8.1.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.Rabbitmq" Version="9.0.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.Redis" Version="9.0.0" />
+    <PackageVersion Include="AspNetCore.HealthChecks.SendGrid" Version="9.0.0" />
+    <PackageVersion Include="Autofac" Version="8.2.0" />
+    <PackageVersion Include="Autofac.Multitenant" Version="8.1.0" />
+    <PackageVersion Include="Autofac.AspNetCore.Multitenant" Version="8.0.0" />
+    <PackageVersion Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageVersion Include="Azue.Core" Version="1.44.1" />
+    <PackageVersion Include="Azue.Identity" Version="1.13.1" />
+    <PackageVersion Include="Castle.Core" Version="5.1.1" />
+    <PackageVersion Include="Dapper" Version="2.1.66" />
+    <PackageVersion Include="Delta" Version="6.1.0" />
+    <PackageVersion Include="FluentStorage" Version="5.5.1" />
+    <PackageVersion Include="Google.Protobuf" Version="3.29.2" />
+    <PackageVersion Include="Grpc.Core.Api" Version="2.67.0" />
+    <PackageVersion Include="Grpc.Net.Client" Version="2.67.0" />
+    <PackageVersion Include="Grpc.Net.ClientFactory" Version="2.67.0" />
+    <PackageVersion Include="Grpc.Net.Common" Version="2.67.0" />
+    <PackageVersion Include="Hangfire.Core" Version="1.8.14" />
+    <PackageVersion Include="idunno.Authentication.Basic" Version="2.4.0" />
+    <PackageVersion Include="Marten" Version="7.29.0" />
+    <PackageVersion Include="MassTransit" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Autofac" Version="7.3.1" />
+    <PackageVersion Include="MassTransit.Abstractions" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.ActiveMQ" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.AmazonS3" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.AmazonSQS" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Analyzers" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Azure.Cosmos.Table" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Azure.Cosmos" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Azure.ServiceBus.Core" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Azure.Storage" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.DapperIntegration" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.DynamoDb" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.EntityFrameworkCore" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.EventHub" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Hangfire" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Interop.NServiceBus" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Kafka" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Marten" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.MongoDb" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Newtonsoft" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Prometheus" Version="8.1.3" />
+    <PackageVersion Include="MassTransit.Quartz" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.RabbitMQ" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.Redis" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.SignalR" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.StateMachineVisualizer" Version="8.3.6" />
+    <PackageVersion Include="MassTransit.TestFramework" Version="8.3.6" Label="test" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="MassTransit.WebJobs.EventHubs" Version="8.3.4" />
+    <PackageVersion Include="MassTransit.WebJobs.ServiceBus" Version="8.3.4" />
+    <PackageVersion Include="Microsoft.AspNetCore.JsonPatch" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="2.0.1" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.3.0" />
+    <PackageVersion Include="Microsoft.Azure.Functions.Worker" Version="2.0.0" />
+    <PackageVersion Include="Microsoft.Azure.WebJobs" Version="3.0.39" />
+    <PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.Abstractions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Primitives" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" Label="test" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="NSwag.AspNetCore" Version="14.2.0" />
+    <PackageVersion Include="NSubstitute" Version="5.3.0" Label="test" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="nunit" Version="4.3.2" Label="test" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0" Label="test" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="Oakton" Version="6.3.0" />
+    <PackageVersion Include="Sentry.Serilog" Version="5.1.0" />
+    <PackageVersion Include="Sentry" Version="5.1.0" />
+    <PackageVersion Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageVersion Include="Serilog.Enrichers.ClientInfo" Version="2.1.2" />
+    <PackageVersion Include="Serilog.Enrichers.Sensitive" Version="1.7.3" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="9.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Logging" Version="9.0.0" />
+    <PackageVersion Include="Serilog.Settings.Configuration" Version="9.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
+    <PackageVersion Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageVersion Include="Serilog.Sinks.MicrosoftTeams.Alternative" Version="1.4.9" />
+    <PackageVersion Include="Serilog" Version="4.2.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Newtonsoft" Version="7.2.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageVersion Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageVersion Include="Unleash.Client" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TF_BUILD)' == 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(BITBUCKET_CI)' == 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.Bitbucket.Git" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(GITLAB_CI)' == 'true'">
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitLab" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(BITBUCKET_CI)' == 'true'">
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GITLAB_CI)' == 'true'">
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+</Project>

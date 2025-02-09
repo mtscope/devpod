@@ -1,0 +1,82 @@
+<Project>
+  <PropertyGroup>
+    <!--    <AssemblyOriginatorKeyFile>$(SolutionDir)strongname.snk</AssemblyOriginatorKeyFile>-->
+    <RepositoryUrl>https://github.com/mtscope/devpod</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/mtscope/devpod</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <ReportAnalyzer>true</ReportAnalyzer>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <LangVersion>latest</LangVersion>
+    <AnalysisLevel>latest</AnalysisLevel>
+
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackagePath>;</PackagePath>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <TargetFramework>net9.0</TargetFramework>
+    <PackageVersion>1.0.0</PackageVersion>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IsTestProject>false</IsTestProject>
+    <IsPublishable>false</IsPublishable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;</DefineConstants>
+    <OutputPath>bin\Debug/</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;</DefineConstants>
+    <OutputPath>bin\Release/</OutputPath>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <RestoreLockedMode>true</RestoreLockedMode>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(EnvironmentName)' != '' ">
+    <EnvironmentName>$(EnvironmentName)</EnvironmentName>
+    <ASPNETCORE_ENVIRONMENT>$(EnvironmentName)</ASPNETCORE_ENVIRONMENT>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition=" '$(PackageVersion)' != '' ">
+      <PropertyGroup>
+        <PackageVersion>$(PackageVersion)</PackageVersion>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <PackageVersion>1.0.0</PackageVersion>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);NU5017;NU5128;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsLinuxX64 Condition="$([MSBuild]::IsOsPlatform('Linux')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == X64">true</IsLinuxX64>
+    <IsMacOsx64 Condition="$([MSBuild]::IsOsPlatform('OSX')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == Arm64">true</IsMacOsx64>
+    <IsMacOsArm64 Condition="$([MSBuild]::IsOsPlatform('OSX')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == Arm64">true</IsMacOsArm64>
+    <IsWindowsX64 Condition="$([MSBuild]::IsOsPlatform('Windows')) And $([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture) == X64">true</IsWindowsX64>
+  </PropertyGroup>
+
+</Project>
