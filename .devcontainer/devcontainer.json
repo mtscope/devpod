@@ -47,7 +47,6 @@
     5000,
     5001
   ],
-  "postCreateCommand": "ehco 'Created!'",
   "hostRequirements": {
     "cpus": 8,
     "memory": "16gb",
