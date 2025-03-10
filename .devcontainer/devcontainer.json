@@ -1,8 +1,12 @@
 {
   "name": "Dotnet Development Environment",
-  "workspaceFolder": "",
-
+//  "service": "workspace",
+  "workspaceFolder": "/home/vscode/workspaces/",
   "image": "mcr.microsoft.com/dotnet/sdk:9.0",
+//  "dockerComposeFile": [
+//    "docker-compose.yml",
+//    "docker-compose.workspace.yml"
+//  ],
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "version": "latest"
@@ -27,6 +31,9 @@
       "version": "none",
       "dotnetRuntimeVersions": "9.0",
       "aspNetCoreRuntimeVersions": "9.0"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
     }
   },
   "customizations": {
@@ -38,19 +45,27 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
-        "editorconfig.editorconfig",
-        "streetsidesoftware.code-spell-checker"
+        "editorconfig.editorconfig"
       ]
     }
   },
   "forwardPorts": [
+    3000,
+    3001,
+    3002,
+    3003,
     5000,
-    5001
+    5001,
+    5002,
+    5003,
+    8080,
+    8081,
   ],
   "hostRequirements": {
-    "cpus": 8,
-    "memory": "16gb",
-    "storage": "32gb"
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "16gb",
+//    "gpu": { "cores": 1000, "storage": "32gb" }
   },
   "remoteEnv": {
     "PODMAN_USERNS": "keep-id",
@@ -59,22 +74,68 @@
   },
   "containerUser": "vscode",
   "portsAttributes": {
+    "3000": {
+      "label": "http:portal",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "3001": {
+      "label": "https:portal",
+      "onAutoForward": "notify",
+      "protocol": "https"
+    },
+    "3002": {
+      "label": "http:auth-portal",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "3003": {
+      "label": "https:auth-portal",
+      "onAutoForward": "notify",
+      "protocol": "https"
+    },
     "5000": {
-      "label": "http:DotnetWeb.WebApi",
+      "label": "http:api",
       "onAutoForward": "notify",
       "protocol": "http"
     },
     "5001": {
-      "label": "https:DotnetWeb.WebApi",
+      "label": "https:api",
+      "onAutoForward": "notify",
+      "protocol": "https"
+    },
+    "5002": {
+      "label": "http:auth-api",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "5003": {
+      "label": "https:auth-api",
+      "onAutoForward": "notify",
+      "protocol": "https"
+    },
+    "8080": {
+      "label": "http:proxy",
+      "onAutoForward": "notify",
+      "protocol": "http"
+    },
+    "8081": {
+      "label": "https:proxy",
       "onAutoForward": "notify",
       "protocol": "https"
     }
   },
-    "mounts": [
+  "mounts": [
       {
         "type": "volume",
         "source": "x509stores",
         "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
       }
-    ]
+    ],
+  "onCreateCommand": "bash .devcontainer/init-cert.sh",
+//  "updateContentCommand": "",
+  "postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts",
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+//  "postAttachCommand": ""
+//  "waitFor": ""
 }
