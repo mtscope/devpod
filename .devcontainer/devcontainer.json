@@ -8,9 +8,9 @@
 //    "docker-compose.workspace.yml"
 //  ],
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest"
-    },
+//    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+//      "version": "latest"
+//    },
     "ghcr.io/devcontainers/features/git:1": {
       "version": "latest"
     },
@@ -45,7 +45,8 @@
         "ms-dotnettools.vscode-dotnet-runtime",
         "ms-dotnettools.csdevkit",
         "ms-dotnettools.csharp",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "streetsidesoftware.code-spell-checker"
       ]
     }
   },
@@ -124,18 +125,18 @@
       "onAutoForward": "notify",
       "protocol": "https"
     }
-  },
-  "mounts": [
-      {
-        "type": "volume",
-        "source": "x509stores",
-        "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
-      }
-    ],
+  }
+//  "mounts": [
+//      {
+//        "type": "volume",
+//        "source": "x509stores",
+//        "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
+//      }
+//    ]
 //  "onCreateCommand": "bash .devcontainer/init-cert.sh",
 //  "updateContentCommand": "",
-  "postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts",
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
-//  "postAttachCommand": ""
+//  "postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts",
+//  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+//  "postAttachCommand": "",
 //  "waitFor": ""
 }
