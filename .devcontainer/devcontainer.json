@@ -59,12 +59,12 @@
     5002,
     5003,
     8080,
-    8081,
+    8081
   ],
   "hostRequirements": {
     "cpus": 4,
     "memory": "8gb",
-    "storage": "16gb",
+    "storage": "16gb"
 //    "gpu": { "cores": 1000, "storage": "32gb" }
   },
   "remoteEnv": {
@@ -132,7 +132,7 @@
         "target": "/home/vscode/.dotnet/corefx/cryptography/x509stores"
       }
     ],
-  "onCreateCommand": "bash .devcontainer/init-cert.sh",
+//  "onCreateCommand": "bash .devcontainer/init-cert.sh",
 //  "updateContentCommand": "",
   "postCreateCommand": ". ${NVM_DIR}/nvm.sh && nvm install --lts",
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
